@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Database\SQLiteConnection;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -11,9 +12,11 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        // Add custom middleware here.
+        $middleware->web(append: [
+            // \App\Http\Middleware\EnsureIsAdmin::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
-        // Add custom exception handling here.
+        //
     })
     ->create();

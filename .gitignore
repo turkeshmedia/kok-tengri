@@ -1,0 +1,14 @@
+*.log
+.env
+.env.backup
+.env.production
+.phpunit.result.cache
+.phpstorm.meta.php
+.idea/
+.vscode/
+node_modules/
+vendor/
+*.sqlite
+*.sqlite3
+.DS_Store
+Thumbs.db
